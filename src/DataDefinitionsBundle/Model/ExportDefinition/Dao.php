@@ -87,7 +87,7 @@ class Dao extends Model\Dao\PimcoreLocationAwareConfigDao
     public function getByName(string $name): void
     {
         foreach ($this->loadIdList() as $id) {
-            $definition = ExportDefinition::getById((int)$id);
+            $definition = ExportDefinition::getById((string)$id);
 
             if ($definition->getName() === $name) {
                 $this->getById((string) $id);
